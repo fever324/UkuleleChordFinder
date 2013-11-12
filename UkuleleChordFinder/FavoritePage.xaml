@@ -1,0 +1,67 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="UkuleleChordFinder.FavoritePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True"
+    xmlns:myUserControl="clr-namespace:UkuleleChordFinder"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:ad="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI">
+    
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Minimized">
+            <shell:ApplicationBarIconButton  Click="help_Click" IconUri="/Resources/elements/questionmark.png" Text="Help"/>
+            <shell:ApplicationBarIconButton Click="Search_Click" IconUri="/Resources/elements/feature.search.png" Text="Search"/>
+            <shell:ApplicationBarIconButton Click="Tuner_Click" IconUri="/Assets/AppBar/T.png" Text="Tuner"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="Ukulele Chord Finder" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="Favorite Chords" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="60"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <ad:AdControl Foreground="Red" AdUnitId="136718" ApplicationId="aaad8bd9-912b-4cbd-a3c2-779848c79273" Height="80" HorizontalAlignment="Left" Margin="-12,450,-12,0" Name="adControl1" VerticalAlignment="Top" Width="480" IsAutoRefreshEnabled="True" />
+            <ListBox Name="ChordsListBox" Height="445" Margin="10,0,12,0" VerticalAlignment="Top"
+                     ItemsSource="{Binding fChords}">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <toolkit:WrapPanel ItemWidth="200"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <toolkit:ContextMenuService.ContextMenu>
+                                <toolkit:ContextMenu IsFadeEnabled="False" IsZoomEnabled="True">
+                                    <toolkit:MenuItem Header="Remove From Favorite" Click="RemovefromMyFavorite_Click"/>
+                                </toolkit:ContextMenu>
+                            </toolkit:ContextMenuService.ContextMenu>
+                            <myUserControl:chordUserControl/>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

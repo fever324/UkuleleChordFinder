@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
+  <App xmlns="" ProductID="{f3a8255d-e1f7-4646-b68d-a5b46116ad2b}" Title="Ukulele Chord Finder" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Hongfei Li" Description="Simply finds the ukulele chords you need." Publisher="Hongfei Li">
+    <IconPath IsRelative="true" IsResource="false">ukuchords.png</IconPath>
+    <Capabilities>
+      <Capability Name="ID_CAP_IDENTITY_USER" />
+      <Capability Name="ID_CAP_MEDIALIB" />
+      <Capability Name="ID_CAP_MICROPHONE" />
+      <Capability Name="ID_CAP_PHONEDIALER" />
+      <Capability Name="ID_CAP_NETWORKING" />
+      <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
+    </Capabilities>
+    <Tasks>
+      <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
+    </Tasks>
+    <Tokens>
+      <PrimaryToken TokenID="UkuleleChordFinderToken" TaskName="_default">
+        <TemplateType5>
+          <BackgroundImageURI IsRelative="true" IsResource="false">ukuchords-tile.png</BackgroundImageURI>
+          <Count>0</Count>
+          <Title>Ukulele Chord Finder</Title>
+        </TemplateType5>
+      </PrimaryToken>
+    </Tokens>
+  </App>
+</Deployment>

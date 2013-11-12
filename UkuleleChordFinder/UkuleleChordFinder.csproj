@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F3A8255D-E1F7-4646-B68D-A5B46116AD2B}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UkuleleChordFinder</RootNamespace>
+    <AssemblyName>UkuleleChordFinder</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>UkuleleChordFinder.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>UkuleleChordFinder.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <ExpressionBlendVersion>5.0.40218.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Advertising.Mobile, Version=6.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Advertising.Mobile.UI, Version=6.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WPtoolkit.4.2013.06.11\lib\sl4-windowsphone71\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="protobuf-net">
+      <HintPath>..\..\tools\Serializer\protobuf-net r640\Full\wp71\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
+    <Reference Include="mscorlib.extensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="chordUserControl.xaml.cs">
+      <DependentUpon>chordUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="helpersClasses\favorite.cs" />
+    <Compile Include="FavoritePage.xaml.cs">
+      <DependentUpon>FavoritePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tunerPage.xaml.cs">
+      <DependentUpon>tunerPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="chordUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FavoritePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="tunerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\AppBar\appbar.add.rest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Chords\a.jpg" />
+    <Content Include="Resources\Chords\a11.jpg" />
+    <Content Include="Resources\Chords\a13.jpg" />
+    <Content Include="Resources\Chords\a6.jpg" />
+    <Content Include="Resources\Chords\a7.jpg" />
+    <Content Include="Resources\Chords\a7sus.jpg" />
+    <Content Include="Resources\Chords\a9.jpg" />
+    <Content Include="Resources\Chords\aaug.jpg" />
+    <Content Include="Resources\Chords\ademidim.jpg" />
+    <Content Include="Resources\Chords\adim.jpg" />
+    <Content Include="Resources\Chords\adim7.jpg" />
+    <Content Include="Resources\Chords\amajor7.jpg" />
+    <Content Include="Resources\Chords\aminor.jpg" />
+    <Content Include="Resources\Chords\aminor11.jpg" />
+    <Content Include="Resources\Chords\aminor13.jpg" />
+    <Content Include="Resources\Chords\aminor6.jpg" />
+    <Content Include="Resources\Chords\aminor7.jpg" />
+    <Content Include="Resources\Chords\aminor9.jpg" />
+    <Content Include="Resources\Chords\asus2.jpg" />
+    <Content Include="Resources\Chords\asus4.jpg" />
+    <Content Include="Resources\Chords\b.jpg" />
+    <Content Include="Resources\Chords\b11.jpg" />
+    <Content Include="Resources\Chords\b13.jpg" />
+    <Content Include="Resources\Chords\b6.jpg" />
+    <Content Include="Resources\Chords\b7.jpg" />
+    <Content Include="Resources\Chords\b7sus.jpg" />
+    <Content Include="Resources\Chords\b9.jpg" />
+    <Content Include="Resources\Chords\baug.jpg" />
+    <Content Include="Resources\Chords\bb.jpg" />
+    <Content Include="Resources\Chords\bb11.jpg" />
+    <Content Include="Resources\Chords\bb13.jpg" />
+    <Content Include="Resources\Chords\bb6.jpg" />
+    <Content Include="Resources\Chords\bb7.jpg" />
+    <Content Include="Resources\Chords\bb7sus.jpg" />
+    <Content Include="Resources\Chords\bb9.jpg" />
+    <Content Include="Resources\Chords\bbaug.jpg" />
+    <Content Include="Resources\Chords\bbdemidim.jpg" />
+    <Content Include="Resources\Chords\bbdim.jpg" />
+    <Content Include="Resources\Chords\bbdim7.jpg" />
+    <Content Include="Resources\Chords\bbm9.jpg" />
+    <Content Include="Resources\Chords\bbmajor7.jpg" />
+    <Content Include="Resources\Chords\bbminor.jpg" />
+    <Content Include="Resources\Chords\bbminor11.jpg" />
+    <Content Include="Resources\Chords\bbminor13.jpg" />
+    <Content Include="Resources\Chords\bbminor6.jpg" />
+    <Content Include="Resources\Chords\bbminor7.jpg" />
+    <Content Include="Resources\Chords\bbsus2.jpg" />
+    <Content Include="Resources\Chords\bbsus4.jpg" />
+    <Content Include="Resources\Chords\bdemidim.jpg" />
+    <Content Include="Resources\Chords\bdim.jpg" />
+    <Content Include="Resources\Chords\bdim7.jpg" />
+    <Content Include="Resources\Chords\bmajor7.jpg" />
+    <Content Include="Resources\Chords\bminor.jpg" />
+    <Content Include="Resources\Chords\bminor11.jpg" />
+    <Content Include="Resources\Chords\bminor13.jpg" />
+    <Content Include="Resources\Chords\bminor6.jpg" />
+    <Content Include="Resources\Chords\bminor7.jpg" />
+    <Content Include="Resources\Chords\bminor9.jpg" />
+    <Content Include="Resources\Chords\bsus2.jpg" />
+    <Content Include="Resources\Chords\bsus4.jpg" />
+    <Content Include="Resources\Chords\csharp.jpg" />
+    <Content Include="Resources\Chords\csharp13.jpg" />
+    <Content Include="Resources\Chords\csharp6.jpg" />
+    <Content Include="Resources\Chords\csharp7.jpg" />
+    <Content Include="Resources\Chords\csharp7sus.jpg" />
+    <Content Include="Resources\Chords\csharp9.jpg" />
+    <Content Include="Resources\Chords\csharpaug.jpg" />
+    <Content Include="Resources\Chords\csharpdemidim.jpg" />
+    <Content Include="Resources\Chords\csharpdim.jpg" />
+    <Content Include="Resources\Chords\csharpdim7.jpg" />
+    <Content Include="Resources\Chords\csharpmajor7.jpg" />
+    <Content Include="Resources\Chords\csharpminor.jpg" />
+    <Content Include="Resources\Chords\csharpminor11.jpg" />
+    <Content Include="Resources\Chords\csharpminor13.jpg" />
+    <Content Include="Resources\Chords\csharpminor6.jpg" />
+    <Content Include="Resources\Chords\csharpminor7.jpg" />
+    <Content Include="Resources\Chords\csharpminor9.jpg" />
+    <Content Include="Resources\Chords\csharpsus2.jpg" />
+    <Content Include="Resources\Chords\csharpsus4.jpg" />
+    <Content Include="Resources\Chords\c.jpg" />
+    <Content Include="Resources\Chords\c11.jpg" />
+    <Content Include="Resources\Chords\c13.jpg" />
+    <Content Include="Resources\Chords\c6.jpg" />
+    <Content Include="Resources\Chords\c7.jpg" />
+    <Content Include="Resources\Chords\c7sus.jpg" />
+    <Content Include="Resources\Chords\c9sus.jpg" />
+    <Content Include="Resources\Chords\caug.jpg" />
+    <Content Include="Resources\Chords\cdemidim.jpg" />
+    <Content Include="Resources\Chords\cdim.jpg" />
+    <Content Include="Resources\Chords\cdim7.jpg" />
+    <Content Include="Resources\Chords\cmajor7.jpg" />
+    <Content Include="Resources\Chords\cminor.jpg" />
+    <Content Include="Resources\Chords\cminor11.jpg" />
+    <Content Include="Resources\Chords\cminor13.jpg" />
+    <Content Include="Resources\Chords\cminor6.jpg" />
+    <Content Include="Resources\Chords\cminor7.jpg" />
+    <Content Include="Resources\Chords\cminor9.jpg" />
+    <Content Include="Resources\Chords\csus2.jpg" />
+    <Content Include="Resources\Chords\csus4.jpg" />
+    <Content Include="Resources\Chords\d.jpg" />
+    <Content Include="Resources\Chords\d11.jpg" />
+    <Content Include="Resources\Chords\d13.jpg" />
+    <Content Include="Resources\Chords\d6.jpg" />
+    <Content Include="Resources\Chords\d7.jpg" />
+    <Content Include="Resources\Chords\d7sus.jpg" />
+    <Content Include="Resources\Chords\d9.jpg" />
+    <Content Include="Resources\Chords\daug.jpg" />
+    <Content Include="Resources\Chords\db11.jpg" />
+    <Content Include="Resources\Chords\ddemidim.jpg" />
+    <Content Include="Resources\Chords\ddim.jpg" />
+    <Content Include="Resources\Chords\ddim7.jpg" />
+    <Content Include="Resources\Chords\dmajor7.jpg" />
+    <Content Include="Resources\Chords\dminor.jpg" />
+    <Content Include="Resources\Chords\dminor11.jpg" />
+    <Content Include="Resources\Chords\dminor13.jpg" />
+    <Content Include="Resources\Chords\dminor6.jpg" />
+    <Content Include="Resources\Chords\dminor7.jpg" />
+    <Content Include="Resources\Chords\dminor9.jpg" />
+    <Content Include="Resources\Chords\dsus2.jpg" />
+    <Content Include="Resources\Chords\dsus4.jpg" />
+    <Content Include="Resources\Chords\e.jpg" />
+    <Content Include="Resources\Chords\e11.jpg" />
+    <Content Include="Resources\Chords\e13.jpg" />
+    <Content Include="Resources\Chords\e6.jpg" />
+    <Content Include="Resources\Chords\e7.jpg" />
+    <Content Include="Resources\Chords\e7sus.jpg" />
+    <Content Include="Resources\Chords\e9.jpg" />
+    <Content Include="Resources\Chords\eaug.jpg" />
+    <Content Include="Resources\Chords\eb.jpg" />
+    <Content Include="Resources\Chords\eb11.jpg" />
+    <Content Include="Resources\Chords\eb13.jpg" />
+    <Content Include="Resources\Chords\eb6.jpg" />
+    <Content Include="Resources\Chords\eb7.jpg" />
+    <Content Include="Resources\Chords\eb7sus.jpg" />
+    <Content Include="Resources\Chords\eb9.jpg" />
+    <Content Include="Resources\Chords\ebaug.jpg" />
+    <Content Include="Resources\Chords\ebdemidim.jpg" />
+    <Content Include="Resources\Chords\ebdim.jpg" />
+    <Content Include="Resources\Chords\ebdim7.jpg" />
+    <Content Include="Resources\Chords\ebm.jpg" />
+    <Content Include="Resources\Chords\ebmajor7.jpg" />
+    <Content Include="Resources\Chords\ebminor11.jpg" />
+    <Content Include="Resources\Chords\ebminor13.jpg" />
+    <Content Include="Resources\Chords\ebminor6.jpg" />
+    <Content Include="Resources\Chords\ebminor7.jpg" />
+    <Content Include="Resources\Chords\ebminor9.jpg" />
+    <Content Include="Resources\Chords\ebsus2.jpg" />
+    <Content Include="Resources\Chords\ebsus4.jpg" />
+    <Content Include="Resources\Chords\edemidim.jpg" />
+    <Content Include="Resources\Chords\edim.jpg" />
+    <Content Include="Resources\Chords\edim7.jpg" />
+    <Content Include="Resources\Chords\emajor7.jpg" />
+    <Content Include="Resources\Chords\eminor.jpg" />
+    <Content Include="Resources\Chords\eminor11.jpg" />
+    <Content Include="Resources\Chords\eminor13.jpg" />
+    <Content Include="Resources\Chords\eminor6.jpg" />
+    <Content Include="Resources\Chords\eminor7.jpg" />
+    <Content Include="Resources\Chords\eminor9.jpg" />
+    <Content Include="Resources\Chords\esus2.jpg" />
+    <Content Include="Resources\Chords\esus4.jpg" />
+    <Content Include="Resources\Chords\fsharp.jpg" />
+    <Content Include="Resources\Chords\fsharp11.jpg" />
+    <Content Include="Resources\Chords\fsharp13.jpg" />
+    <Content Include="Resources\Chords\fsharp6.jpg" />
+    <Content Include="Resources\Chords\fsharp7.jpg" />
+    <Content Include="Resources\Chords\fsharp7sus.jpg" />
+    <Content Include="Resources\Chords\fsharp9.jpg" />
+    <Content Include="Resources\Chords\fsharpaug.jpg" />
+    <Content Include="Resources\Chords\fsharpdemidim.jpg" />
+    <Content Include="Resources\Chords\fsharpdim.jpg" />
+    <Content Include="Resources\Chords\fsharpdim7.jpg" />
+    <Content Include="Resources\Chords\fsharpminor.jpg" />
+    <Content Include="Resources\Chords\fsharpmajor7.jpg" />
+    <Content Include="Resources\Chords\fsharpminor11.jpg" />
+    <Content Include="Resources\Chords\fsharpminor13.jpg" />
+    <Content Include="Resources\Chords\fsharpminor6.jpg" />
+    <Content Include="Resources\Chords\fsharpminor7.jpg" />
+    <Content Include="Resources\Chords\fsharpminro9.jpg" />
+    <Content Include="Resources\Chords\fsharpsus2.jpg" />
+    <Content Include="Resources\Chords\fsharpsus4.jpg" />
+    <Content Include="Resources\Chords\f.jpg" />
+    <Content Include="Resources\Chords\f11.jpg" />
+    <Content Include="Resources\Chords\f13.jpg" />
+    <Content Include="Resources\Chords\f6.jpg" />
+    <Content Include="Resources\Chords\f7.jpg" />
+    <Content Include="Resources\Chords\f7sus.jpg" />
+    <Content Include="Resources\Chords\f9.jpg" />
+    <Content Include="Resources\Chords\faug.jpg" />
+    <Content Include="Resources\Chords\fdemidim.jpg" />
+    <Content Include="Resources\Chords\fdim.jpg" />
+    <Content Include="Resources\Chords\fdim7.jpg" />
+    <Content Include="Resources\Chords\fmajor7.jpg" />
+    <Content Include="Resources\Chords\fminor.jpg" />
+    <Content Include="Resources\Chords\fminor11.jpg" />
+    <Content Include="Resources\Chords\fminor13.jpg" />
+    <Content Include="Resources\Chords\fminor6.jpg" />
+    <Content Include="Resources\Chords\fminor7.jpg" />
+    <Content Include="Resources\Chords\fminor9.jpg" />
+    <Content Include="Resources\Chords\fsus2.jpg" />
+    <Content Include="Resources\Chords\fsus4.jpg" />
+    <Content Include="Resources\Chords\gsharp.jpg" />
+    <Content Include="Resources\Chords\gsharp11.jpg" />
+    <Content Include="Resources\Chords\gsharp13.jpg" />
+    <Content Include="Resources\Chords\gsharp6.jpg" />
+    <Content Include="Resources\Chords\gsharp7.jpg" />
+    <Content Include="Resources\Chords\gsharp7sus.jpg" />
+    <Content Include="Resources\Chords\gsharp9.jpg" />
+    <Content Include="Resources\Chords\gsharpaug.jpg" />
+    <Content Include="Resources\Chords\Gsharpdemidim.jpg" />
+    <Content Include="Resources\Chords\gsharpdim.jpg" />
+    <Content Include="Resources\Chords\gsharpdim7.jpg" />
+    <Content Include="Resources\Chords\gsharpmajor7.jpg" />
+    <Content Include="Resources\Chords\gsharpminor.jpg" />
+    <Content Include="Resources\Chords\gsharpminor11.jpg" />
+    <Content Include="Resources\Chords\gsharpminor13.jpg" />
+    <Content Include="Resources\Chords\gsharpminor6.jpg" />
+    <Content Include="Resources\Chords\gsharpminor7.jpg" />
+    <Content Include="Resources\Chords\gsharpminor9.jpg" />
+    <Content Include="Resources\Chords\gsharpsus2.jpg" />
+    <Content Include="Resources\Chords\gsharpsus4.jpg" />
+    <Content Include="Resources\Chords\g.jpg" />
+    <Content Include="Resources\Chords\g11.jpg" />
+    <Content Include="Resources\Chords\g13.jpg" />
+    <Content Include="Resources\Chords\g6.jpg" />
+    <Content Include="Resources\Chords\g7.jpg" />
+    <Content Include="Resources\Chords\g7sus.jpg" />
+    <Content Include="Resources\Chords\g9.jpg" />
+    <Content Include="Resources\Chords\gaug.jpg" />
+    <Content Include="Resources\Chords\gdemidim.jpg" />
+    <Content Include="Resources\Chords\gdim.jpg" />
+    <Content Include="Resources\Chords\gdim7.jpg" />
+    <Content Include="Resources\Chords\gmajor7.jpg" />
+    <Content Include="Resources\Chords\gminor.jpg" />
+    <Content Include="Resources\Chords\gminor11.jpg" />
+    <Content Include="Resources\Chords\gminor13.jpg" />
+    <Content Include="Resources\Chords\gminor6.jpg" />
+    <Content Include="Resources\Chords\gminor7.jpg" />
+    <Content Include="Resources\Chords\gminor9.jpg" />
+    <Content Include="Resources\Chords\gsus2.jpg" />
+    <Content Include="Resources\Chords\gsus4.jpg" />
+    <Content Include="Resources\elements\favs.png" />
+    <Content Include="Resources\elements\feature.search.png" />
+    <Content Include="Resources\elements\feature.settings.png" />
+    <Content Include="Resources\elements\questionmark.png" />
+    <Content Include="Resources\elements\SplashScreenImage.jpg" />
+    <Content Include="Resources\sounds\A.wma" />
+    <Content Include="Resources\sounds\C.wma" />
+    <Content Include="Resources\sounds\E.wma" />
+    <Content Include="Resources\sounds\G.wma" />
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
+    <Content Include="ukuchords-tile.png" />
+    <Content Include="ukuchords.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\AppBar\T.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

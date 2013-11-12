@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UkuleleChordFinder", "UkuleleChordFinder\UkuleleChordFinder.csproj", "{F3A8255D-E1F7-4646-B68D-A5B46116AD2B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3A8255D-E1F7-4646-B68D-A5B46116AD2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3A8255D-E1F7-4646-B68D-A5B46116AD2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3A8255D-E1F7-4646-B68D-A5B46116AD2B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F3A8255D-E1F7-4646-B68D-A5B46116AD2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3A8255D-E1F7-4646-B68D-A5B46116AD2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3A8255D-E1F7-4646-B68D-A5B46116AD2B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
